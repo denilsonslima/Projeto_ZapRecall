@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import cards from "../componentes/Cards"
 
-export default function RodaPe(){
+export default function RodaPe({tarefas}){
     return (
-        <Footer>0/{cards.length} Concluidos</Footer>
+        <Footer>{tarefas}/{cards.length} Concluidos</Footer>
     )
 }
 

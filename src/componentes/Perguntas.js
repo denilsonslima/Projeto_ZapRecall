@@ -4,9 +4,10 @@ import seta_virar from "../assets/img/seta_virar.png"
 import styled from "styled-components"
 import { useState } from "react"
 
-export default function Perguntas() {
+export default function Perguntas({setTarefas, tarefas }) {
     const [clicado, setClicado] = useState([])
     const [viradas, setViradas] = useState([])
+    const [concluida, setConcluido] = useState([])
 
     function click(index) {
         const contido = clicado.includes(index)
@@ -21,6 +22,14 @@ export default function Perguntas() {
 
         if (!contido) {
             setViradas([...clicado, index])
+        }
+    }
+
+    function tarefasConcluidas(index){
+        const contido = concluida.includes(index)
+        if(!contido){
+            setConcluido([...concluida, index])
+            setTarefas(tarefas + 1)
         }
     }
 
@@ -41,9 +50,9 @@ export default function Perguntas() {
                     <PerguntaAberta finalizado={viradas.includes(index)}>
                         {e.answer}
                         <div>
-                            <button>Não lembrei</button>
-                            <button>Quase não lembrei</button>
-                            <button>Zap!</button>
+                            <button onClick={() => tarefasConcluidas(index)}>Não lembrei</button>
+                            <button onClick={() => tarefasConcluidas(index)}>Quase não lembrei</button>
+                            <button onClick={() => tarefasConcluidas(index)}>Zap!</button>
                         </div>
                     </PerguntaAberta>
                 </div>)}
