@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import GlobalStyle from "./assets/css/globalStyles";
+import TelaInicial from "./componentes/TelaInicial";
+import TelaPrincipal from "./componentes/TelaPrincipal";
 
 function App() {
+  const [play, setPlay] = useState(false)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <TelaInicial
+        play={play}
+        setPlay={setPlay}
+      />
+
+      <TelaPrincipal
+        play={play}
+      />
     </div>
   );
 }
 
-export default App;
+export default App
