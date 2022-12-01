@@ -40,6 +40,11 @@ export default function Perguntas() {
                     </PerguntaAberta>
                     <PerguntaAberta finalizado={viradas.includes(index)}>
                         {e.answer}
+                        <div>
+                            <button>Não lembrei</button>
+                            <button>Quase não lembrei</button>
+                            <button>Zap!</button>
+                        </div>
                     </PerguntaAberta>
                 </div>)}
         </>
@@ -49,7 +54,7 @@ export default function Perguntas() {
 
 const PerguntaFechada = styled.div`
     width: 300px;
-    height: 35px;
+    height: 65px;
     background-color: #FFFFFF;
     margin: 12px;
     padding: 15px;
@@ -71,6 +76,7 @@ const PerguntaFechada = styled.div`
 
 const PerguntaAberta = styled.div`
     width: 300px;
+    height: 131px;
     margin: 12px;
     padding: 15px;
     min-height: 100px;
@@ -91,5 +97,36 @@ const PerguntaAberta = styled.div`
         position: absolute;
         bottom: 10px;
         right: 10px;
+    } 
+    & div {
+        display: flex;
+        justify-content: space-between;
+        & button {
+            width: 85px;
+            height: 37px;
+            border-radius: 5px;
+            border: none;
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        & :nth-child(1){
+            background-color: #FF3030;
+        }
+        & :nth-child(2){
+            background-color: #FF922E;
+        }
+        & :nth-child(3){
+            background-color: #2FBE34;
+        }
+
+
     }
 `

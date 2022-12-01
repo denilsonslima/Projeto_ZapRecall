@@ -3,7 +3,7 @@ import Logo from   "../componentes/Logo"
 import Perguntas from "../componentes/Perguntas";
 import RodaPe from "../componentes/RodaPe";
 
-export default function TelaPrincipal({play}) {
+export default function TelaPrincipal({play, tarefas, setTarefas}) {
     return (
         <Screen play={play}>
             <Logo />
