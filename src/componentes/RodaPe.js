@@ -8,7 +8,7 @@ export default function RodaPe({tarefas}){
 }
 
 const Footer = styled.div `
-  width: 100%;
+  width: 100vw;
   min-height: 50px;
   background-color: #FFFFFF;
   position: fixed;

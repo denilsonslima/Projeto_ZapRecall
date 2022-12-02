@@ -20,11 +20,11 @@ const Screen = styled.div`
     align-items: center;
     margin: 0px;
     padding: 0px;
+    padding-top: 20vh;
     & img {
         width: 136px;
         height: 161px;
         margin: 0 auto;
-        margin-top: 150px
     }
     & h1 {
         height: 59px;

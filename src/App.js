@@ -6,6 +6,7 @@ import TelaPrincipal from "./componentes/TelaPrincipal";
 function App() {
   const [play, setPlay] = useState(false)
   const [tarefas, setTarefas] = useState(0)
+
   return (
     <div className="App">
       <GlobalStyle />

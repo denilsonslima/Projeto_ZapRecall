@@ -25,7 +25,5 @@ const Screen = styled.div`
     display: ${props => !props.play ? "none" : "flex"};
     flex-direction: column;
     align-items: center;
-    margin: 0px;
-    padding: 0px;
-    padding-bottom: 200px;
+    padding-bottom: 200px; 
 `
