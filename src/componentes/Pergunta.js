@@ -12,27 +12,28 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
     const [icon, setIcon] = useState(seta_play)
 
     return (
-        <div>
+        <div data-test="flashcard">
             <PerguntaFechada
+                data-test="flashcard-text"
                 clicado={clicado === 0 || clicado === 3}
                 finalizado={clicado === 3}
                 cor={cor}
             >
                 <p onClick={() => setClicado(true)}>{`Pergunta ${index + 1}`}</p>
-                <img src={icon} alt="" onClick={() => {
+                <img data-test="play-btn" src={icon} alt="" onClick={() => {
                     if (clicado < 3) {
                         setClicado(clicado + 1)
                     }
                 }} />
             </PerguntaFechada>
-            <PerguntaAberta clicado={clicado === 1}>
+            <PerguntaAberta data-test="flashcard-text" clicado={clicado === 1}>
                 {e.question}
-                <img src={seta_virar} alt="" onClick={() => setClicado(clicado + 1)} />
+                <img data-test="turn-btn" src={seta_virar} alt="" onClick={() => setClicado(clicado + 1)} />
             </PerguntaAberta>
-            <PerguntaAberta clicado={clicado === 2}>
+            <PerguntaAberta data-test="flashcard-text" clicado={clicado === 2}>
                 {e.answer}
                 <div>
-                    <button onClick={() => {
+                    <button data-test="no-btn" onClick={() => {
                         setCor("#FF3030")
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
@@ -41,7 +42,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                     }>Não lembrei
                     </button>
 
-                    <button onClick={() => {
+                    <button data-test="partial-btn" onClick={() => {
                         setCor("#FF922E")
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
@@ -49,7 +50,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                     }}>Quase não lembrei
                     </button>
 
-                    <button onClick={() => {
+                    <button data-test="zap-btn" onClick={() => {
                         setCor("#2FBE34")
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)

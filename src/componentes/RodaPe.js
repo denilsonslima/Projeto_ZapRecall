@@ -3,7 +3,7 @@ import cards from "../cards"
 
 export default function RodaPe({tarefas}){
     return (
-        <Footer>{tarefas}/{cards.length} Concluidos</Footer>
+        <Footer data-test="footer">{tarefas}/{cards.length} Concluidos</Footer>
     )
 }
 
