@@ -6,7 +6,7 @@ export default function TelaInicial({play, setPlay}) {
         <Screen iniciar={play}>
             <img src={logotipo} alt="" />
             <h1>ZapRecall</h1>
-            <button onClick={() => setPlay(true)} >Iniciar Recall!</button>
+            <button data-test="start-btn" onClick={() => setPlay(true)} >Iniciar Recall!</button>
         </Screen>
     )
 }
