@@ -10,6 +10,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
     const [clicado, setClicado] = useState(0)
     const [cor, setCor] = useState("#333333")
     const [icon, setIcon] = useState(seta_play)
+    const [dataTeste, setDataTeste] = useState("play-btn")
 
     return (
         <div data-test="flashcard">
@@ -20,7 +21,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                 cor={cor}
             >
                 <p onClick={() => setClicado(true)}>{`Pergunta ${index + 1}`}</p>
-                <img data-test="play-btn" src={icon} alt="" onClick={() => {
+                <img data-test={dataTeste} src={icon} alt="" onClick={() => {
                     if (clicado < 3) {
                         setClicado(clicado + 1)
                     }
@@ -38,6 +39,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
                         setIcon(icone_erro)
+                        setDataTeste("no-icon")
                     }
                     }>Não lembrei
                     </button>
@@ -47,6 +49,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
                         setIcon(icone_quase)
+                        setDataTeste("partial-icon")
                     }}>Quase não lembrei
                     </button>
 
@@ -55,6 +58,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
                         setIcon(icone_certo)
+                        setDataTeste("zap-icon")
                     }}>Zap!
                     </button>
                 </div>
