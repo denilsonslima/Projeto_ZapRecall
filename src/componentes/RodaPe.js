@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import cards from "../componentes/Cards"
+import cards from "../cards"
 
 export default function RodaPe({tarefas}){
     return (
