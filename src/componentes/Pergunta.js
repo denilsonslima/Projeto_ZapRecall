@@ -6,7 +6,7 @@ import icone_certo from "../assets/img/icone_certo.png"
 import styled from "styled-components"
 import { useState } from "react"
 
-export default function Pergunta({ tarefas, setTarefas, index, e }) {
+export default function Pergunta({ tarefas, setTarefas, index, e, ico, setIco }) {
     const [clicado, setClicado] = useState(0)
     const [cor, setCor] = useState("#333333")
     const [icon, setIcon] = useState(seta_play)
@@ -39,6 +39,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
                         setIcon(icone_erro)
+                        setIco([...ico,"icone_erro"])
                         setDataTeste("no-icon")
                     }
                     }>Não lembrei
@@ -49,6 +50,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
                         setIcon(icone_quase)
+                        setIco([...ico,"icone_quase"])
                         setDataTeste("partial-icon")
                     }}>Quase não lembrei
                     </button>
@@ -58,6 +60,7 @@ export default function Pergunta({ tarefas, setTarefas, index, e }) {
                         setClicado(clicado + 1)
                         setTarefas(tarefas + 1)
                         setIcon(icone_certo)
+                        setIco([...ico, "icone_certo"])
                         setDataTeste("zap-icon")
                     }}>Zap!
                     </button>

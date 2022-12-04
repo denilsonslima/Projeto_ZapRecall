@@ -1,20 +1,24 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Logo from "../componentes/Logo"
-import Pergunta from "../componentes/Perguntas";
+import Perguntas from "../componentes/Perguntas";
 import RodaPe from "../componentes/RodaPe";
 
 export default function TelaPrincipal({ play}) {
     const [tarefas, setTarefas] = useState(0)
+    const [ico, setIco] = useState([])
     return (
         <Screen play={play}>
             <Logo />
-            <Pergunta
+            <Perguntas
                 tarefas={tarefas}
                 setTarefas={setTarefas}
+                ico={ico}
+                setIco={setIco}
             />
             <RodaPe
                 tarefas={tarefas}
+                ico={ico}
             />
         </Screen>
     )

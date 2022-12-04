@@ -1,7 +1,7 @@
 import cards from "../cards"
 import Pergunta from "./Pergunta"
 
-export default function Perguntas({ setTarefas, tarefas }) {
+export default function Perguntas({ setTarefas, tarefas, ico, setIco}) {
     return (
         <>
             {cards.map((e, index) =>
@@ -11,6 +11,8 @@ export default function Perguntas({ setTarefas, tarefas }) {
                     index={index}
                     setTarefas={setTarefas}
                     tarefas={tarefas}
+                    ico={ico}
+                    setIco={setIco}
                 />
             )}
         </>
